@@ -1,0 +1,9 @@
+<resources>
+    <plurals name="numberOfContacts">
+        <item quantity="one">Загружен %d контакт.</item>
+        <item quantity="few">Загружено %d контакта.</item>
+        <item quantity="other">Загружено %d контактов.</item>
+    </plurals>
+
+    <string name="app_name">hw3</string>
+</resources>
