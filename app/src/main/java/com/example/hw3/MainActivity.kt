@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_NAME = "EXTRA_NAME"
         const val EXTRA_NUMBER = "EXTRA_NUMBER"
+        const val MESSAGE = "Cannot access contacts"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Cannot access contacts",
+                        MESSAGE,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
