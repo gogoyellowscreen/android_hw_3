@@ -3,9 +3,10 @@ package com.example.hw3
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,10 +46,8 @@ class MainActivity : AppCompatActivity() {
         myRecyclerView.apply {
             layoutManager = viewManager
             adapter = ContactAdapter(contactList) {
-                val intent: Intent = Intent(this.context, PhoneActivity::class.java).apply {
-                    putExtra(EXTRA_NAME, it.name)
-                    putExtra(EXTRA_NUMBER, it.phoneNumber)
-                }
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:${it.phoneNumber}")
                 startActivity(intent)
             }
         }
